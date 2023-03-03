@@ -1,0 +1,6 @@
+function checkTokenValidity(token) {
+  const header = jwt.decode(token);
+  if(!header) return false;
+  const now = Math.floor(Date.now() / 1000);
+  return (header.exp > now)? true : false
+}
